@@ -231,9 +231,9 @@ export default function Generator() {
         createdAt: new Date().toISOString()
       });
       alert('Post saved successfully to your dashboard!');
-    } catch (err) {
+    } catch (err: any) {
       console.error('Failed to save post', err);
-      alert('Failed to save post');
+      alert('Failed to save post: ' + (err.message || err));
     } finally {
       setSavingPost(false);
     }

@@ -143,9 +143,9 @@ export default function PosterEditor() {
       });
 
       alert("Post saved successfully to your dashboard!");
-    } catch (err) {
+    } catch (err: any) {
       console.error("Save failed", err);
-      alert("Failed to save post");
+      alert("Failed to save post: " + (err.message || err));
     } finally {
       setSaving(false);
     }
