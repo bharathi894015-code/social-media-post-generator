@@ -6,6 +6,7 @@ import { useFirestore } from '../hooks/useFirestore';
 import Generator from './Generator';
 import PosterEditor from './PosterEditor';
 import LogoGenerator from './LogoGenerator';
+import Pricing from './Pricing';
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -45,7 +46,7 @@ export default function Dashboard() {
           <div className="bg-primary/5 p-4 rounded-xl">
             <div className="flex items-center justify-between">
               <span className="text-xs font-semibold text-primary">FREE PLAN</span>
-              <button className="text-xs text-secondary hover:underline">Upgrade</button>
+              <Link to="/pricing" className="text-xs text-secondary hover:underline">Upgrade</Link>
             </div>
             <p className="text-sm text-gray-500 mt-1">5 posts / day limit</p>
           </div>
@@ -75,6 +76,7 @@ export default function Dashboard() {
             <Route path="/generator" element={<Generator />} />
             <Route path="/logo" element={<LogoGenerator />} />
             <Route path="/editor" element={<PosterEditor />} />
+            <Route path="/pricing" element={<Pricing />} />
           </Routes>
         </main>
       </div>
