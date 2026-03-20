@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap";
+
+@source "../src/**/*.{js,ts,jsx,tsx,html}";
+
+@theme {
+  --color-primary: #6C63FF;
+  --color-secondary: #4A90E2;
+  --color-accent: #FF4A55;
+  --color-background: #F8FAFC;
+  --color-card: #FFFFFF;
+  --color-text: #1E293B;
+  
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+}
+
+:root {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #F7F8FC;
+  color: #1A1A1A;
+}
+
+/* Custom scrollbar for left panel if needed */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
