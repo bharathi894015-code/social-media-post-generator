@@ -1,0 +1,13 @@
+﻿
+> poster-generator@0.0.0 build
+> tsc -b && vite build
+
+src/pages/BulkGenerator.tsx(2,29): error TS6133: 'ArrowRight' is declared but its value is never read.
+src/pages/Dashboard.tsx(3,46): error TS6133: 'Files' is declared but its value is never read.
+src/pages/Dashboard.tsx(3,53): error TS6133: 'CreditCard' is declared but its value is never read.
+src/pages/PosterEditor.tsx(8,13): error TS6133: 'Copy' is declared but its value is never read.
+src/pages/PosterEditor.tsx(8,45): error TS6133: 'Upload' is declared but its value is never read.
+src/pages/PosterEditor.tsx(8,53): error TS6133: 'Check' is declared but its value is never read.
+src/pages/PosterEditor.tsx(15,11): error TS6133: 'saveBrandKit' is declared but its value is never read.
+src/pages/PosterEditor.tsx(42,20): error TS6133: 'setShowLogo' is declared but its value is never read.
+src/pages/PosterEditor.tsx(44,25): error TS6133: 'setShowWatermark' is declared but its value is never read.

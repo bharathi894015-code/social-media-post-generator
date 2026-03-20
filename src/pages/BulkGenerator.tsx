@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Sparkles, Loader2, ArrowRight, Copy, Check, Info } from 'lucide-react';
+import { Sparkles, Loader2, Copy, Check, Info } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export default function BulkGenerator() {

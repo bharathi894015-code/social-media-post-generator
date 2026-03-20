@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, Link, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Palette, Sparkles, Files, CreditCard, LogOut } from 'lucide-react';
+import { LayoutDashboard, Palette, Sparkles, LogOut } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useFirestore } from '../hooks/useFirestore';
 import Generator from './Generator';

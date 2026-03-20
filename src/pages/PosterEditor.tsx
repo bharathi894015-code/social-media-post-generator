@@ -5,14 +5,14 @@ import { useAuth } from '../context/AuthContext';
 import { toPng, toJpeg } from 'html-to-image';
 import { 
   Type, Palette, ImageIcon, AlignLeft, AlignCenter, AlignRight, 
-  Download, Copy, Save, Loader2, ArrowLeft, Upload, Check 
+  Download, Save, Loader2, ArrowLeft 
 } from 'lucide-react';
 
 export default function PosterEditor() {
   const location = useLocation();
   const navigate = useNavigate();
   const { user } = useAuth();
-  const { saveBrandKit, savePost } = useFirestore();
+  const { savePost } = useFirestore();
   const canvasRef = useRef<HTMLDivElement>(null);
 
   // Initial data from navigation state if available
@@ -39,9 +39,9 @@ export default function PosterEditor() {
   const [bgImage, setBgImage] = useState('');
 
   // Logo & Watermark
-  const [showLogo, setShowLogo] = useState(true);
+  const showLogo = true;
   const [logoURL, setLogoURL] = useState('');
-  const [showWatermark, setShowWatermark] = useState(true);
+  const showWatermark = true;
 
   const [downloading, setDownloading] = useState(false);
   const [saving, setSaving] = useState(false);
