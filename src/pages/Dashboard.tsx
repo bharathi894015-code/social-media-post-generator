@@ -92,6 +92,11 @@ const DashboardHome = () => {
   useEffect(() => {
     if (user) {
       getPosts(user.uid).then(setPosts);
+
+      // Verify if Environment Variables are loaded correctly in Vercel
+      if (import.meta.env.VITE_FIREBASE_PROJECT_ID === "dummy" || !import.meta.env.VITE_FIREBASE_PROJECT_ID) {
+        alert("⚠️ CRITICAL: Vercel did NOT load your Firebase Environment Variables. Make sure you included the 'VITE_' prefix on Vercel (e.g., VITE_FIREBASE_API_KEY) and then Re-Deployed!");
+      }
     }
   }, [user, getPosts]);
 
