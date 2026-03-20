@@ -24,6 +24,7 @@ export default function Generator() {
 
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string>('');
   const [savingPost, setSavingPost] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
 
   const [includeImage, setIncludeImage] = useState(false);
   const [imageType, setImageType] = useState<'ai' | 'manual'>('ai');
@@ -230,7 +231,8 @@ export default function Generator() {
         posterImageURL: includeImage ? (generatedImageUrl || getAiImagePlaceholder(topic)) : '',
         createdAt: new Date().toISOString()
       });
-      alert('Post saved successfully to your dashboard!');
+      setIsSaved(true);
+      setTimeout(() => setIsSaved(false), 2000);
     } catch (err: any) {
       console.error('Failed to save post', err);
       alert('Failed to save post: ' + (err.message || err));
@@ -491,10 +493,14 @@ export default function Generator() {
                     <button 
                       onClick={handleSavePost}
                       disabled={savingPost}
-                      className="flex items-center gap-1 text-sm font-medium text-green-600 hover:text-green-700 transition-colors disabled:opacity-70"
-                    >
-                      {savingPost ? <Loader2 className="h-3 w-3 animate-spin" /> : <Save className="h-3 w-3" />} 
-                      Save
+                          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-semibold shadow-sm transition ${
+                            isSaved 
+                              ? 'bg-green-500 border-green-500 text-white' 
+                              : 'bg-white hover:bg-gray-50 text-gray-700 border-gray-200'
+                          }`}
+                        >
+                          {savingPost ? <Loader2 className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
+                          {isSaved ? 'Saved ✅' : 'Save'}
                     </button>
                     <button 
                       onClick={() => navigate('/editor', { 
